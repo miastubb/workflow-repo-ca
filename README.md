@@ -32,6 +32,14 @@ Run Tailwind CSS watcher:
 npm run dev
 ```
 
+```bash
+npm run lint
+```
+
+```bash
+npm run format
+```
+
 Run Vitest unit tests:
 
 ```bash
@@ -95,3 +103,7 @@ This project uses:
 - lint-staged for staged file checks
 - Vitest for unit testing
 - Playwright for end-to-end testing
+
+ESLint successfully identified minor code-quality issues in the existing codebase
+One example was a no-useless-assignment warning in displayMessage.js
+The warning did not affect runtime behavior but demonstrated static analysis working correctly
