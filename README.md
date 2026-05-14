@@ -1,22 +1,33 @@
 # Workflow Course Assignment
 
-This repository is a fork used for the Workflow course assignment. The project has been updated with ESLint, Prettier, Husky, lint-staged, Vitest, and Playwright to improve code quality and testing workflow.
+This repository is a fork used for the Noroff Workflow course assignment.
+
+The project was improved with modern development tooling to strengthen code quality, formatting consistency, automated testing, and Git workflow practices.
+
+Implemented tooling includes:
+
+- ESLint
+- Prettier
+- Husky
+- lint-staged
+- Vitest
+- Playwright
+
+---
 
 ## Installation
 
-Run the following command in the project root:
+Install dependencies from the project root:
 
 ```bash
 npm install
 ```
 
-## Run the project
+---
 
-Open the project in VS Code and select:
+## Running the project
 
-```text
-Open with Live Server
-```
+Open the project in VS Code and start the project using Live Server.
 
 Expected local URL:
 
@@ -24,17 +35,23 @@ Expected local URL:
 http://127.0.0.1:5500
 ```
 
+---
+
 ## Available scripts
 
-Run Tailwind CSS watcher:
+Start Tailwind CSS watcher:
 
 ```bash
 npm run dev
 ```
 
+Run ESLint:
+
 ```bash
 npm run lint
 ```
+
+Run Prettier formatting:
 
 ```bash
 npm run format
@@ -64,6 +81,8 @@ Run Playwright UI mode:
 npm run test:e2e:ui
 ```
 
+---
+
 ## Environment variables
 
 Create a local `.env` file using `.env.example` as a template.
@@ -75,7 +94,9 @@ TEST_EMAIL=
 TEST_PASSWORD=
 ```
 
-Do not commit real `.env` values.
+Do not commit real environment variable values.
+
+---
 
 ## Testing
 
@@ -91,19 +112,23 @@ End-to-end tests are located in:
 tests/e2e
 ```
 
-The Playwright tests mock API responses to avoid dependency on unstable external APIs.
+Playwright tests use mocked API responses where appropriate to reduce dependency on unstable external APIs during testing.
 
-## Code quality tools
+---
+
+## Code quality workflow
 
 This project uses:
 
-- ESLint for linting
-- Prettier for formatting
-- Husky for Git hooks
-- lint-staged for staged file checks
+- ESLint for static code analysis
+- Prettier for consistent formatting
+- Husky for automated Git hooks
+- lint-staged for staged file validation
 - Vitest for unit testing
 - Playwright for end-to-end testing
 
-ESLint successfully identified minor code-quality issues in the existing codebase
-One example was a no-useless-assignment warning in displayMessage.js
-The warning did not affect runtime behavior but demonstrated static analysis working correctly
+During development, ESLint identified several minor code-quality issues in the existing codebase.
+
+One example was an unnecessary mutable assignment in `displayMessage.js`. The issue did not affect runtime behavior, but refactoring the implementation improved readability and aligned the code with modern JavaScript best practices.
+
+Husky and lint-staged were configured to automatically run checks before commits, helping prevent improperly formatted or failing code from being committed to the repository.

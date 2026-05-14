@@ -7,8 +7,10 @@ export function displayMessage(container, messageType, message) {
     parent = container;
   }
 
+  if (!parent) return;
+
   const baseClasses = "p-4 mb-4 rounded-lg border";
-  let typeClasses = "";
+  let typeClasses;
 
   switch (messageType) {
     case "error":
