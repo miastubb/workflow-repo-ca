@@ -10,16 +10,15 @@ function initializeApp() {
   logoutButtonListener();
 
   const path = window.location.pathname;
-  console.log(path);
 
-  if (path === "/" || path === "/index.html") {
-    displayVenueList();
-  } else if (path.startsWith("/login")) {
-    loginFormListener();
-  } else if (path.startsWith("/register")) {
-    registerFormListener();
-  } else if (path.startsWith("/venue/")) {
+  if (path.includes("/venue/")) {
     displayVenue();
+  } else if (path.includes("/login")) {
+    loginFormListener();
+  } else if (path.includes("/register")) {
+    registerFormListener();
+  } else if (path.endsWith("/") || path.endsWith("/index.html")) {
+    displayVenueList();
   }
 }
 
