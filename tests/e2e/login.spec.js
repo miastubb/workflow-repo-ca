@@ -19,7 +19,7 @@ test("shows error with invalid credentials", async ({ page }) => {
   await page.click('button[type="submit"]');
 
   await expect(page.locator("#message-container")).toContainText(
-    "Invalid credentials",
+    "Invalid email or password",
   );
 });
 

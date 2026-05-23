@@ -20,7 +20,7 @@ export async function displayVenue() {
     updateTitle(name);
     renderVenue(container, venue);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     displayMessage(container, "error", error.message);
   }
 }
