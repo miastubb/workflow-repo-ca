@@ -24,6 +24,9 @@ test("shows error with invalid credentials", async ({ page }) => {
 });
 
 test("logs in successfully with valid credentials", async ({ page }) => {
+  const testEmail = process.env.TEST_EMAIL || "mia@test.com";
+  const testPassword = process.env.TEST_PASSWORD || "password123";
+
   await page.route("**/holidaze/auth/login", async (route) => {
     await route.fulfill({
       status: 200,
@@ -31,15 +34,15 @@ test("logs in successfully with valid credentials", async ({ page }) => {
       body: JSON.stringify({
         accessToken: "fake-token",
         name: "Mia",
-        email: "mia@test.com",
+        email: testEmail,
       }),
     });
   });
 
   await page.goto("/login/");
 
-  await page.fill('input[name="email"]', "mia@test.com");
-  await page.fill('input[name="password"]', "password123");
+  await page.fill('input[name="email"]', testEmail);
+  await page.fill('input[name="password"]', testPassword);
 
   await page.click('button[type="submit"]');
 
